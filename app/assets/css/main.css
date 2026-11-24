@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* ─── Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── Tokens ─── */
+:root {
+  --g-green:       #00e87b;
+  --g-green-dim:   #00c465;
+  --g-blue:        #0ea5e9;
+  --g-violet:      #a78bfa;
+  --g-bg:          #07070f;
+  --g-surface:     rgba(255,255,255,0.033);
+  --g-border:      rgba(255,255,255,0.07);
+  --g-border-h:    rgba(0,232,123,0.22);
+  --radius-card:   18px;
+  --font-display:  'Syne', system-ui, sans-serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+}
+
+/* ─── Base ─── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--g-bg);
+  color: #e8edf5;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+* { box-sizing: border-box; }
+
+::selection { background: rgba(0,232,123,0.25); }
+
+/* ─── Typography ─── */
+.display { font-family: var(--font-display); font-weight: 800; }
+.mono    { font-family: var(--font-mono); }
+
+/* ─── Gradient text ─── */
+.g-text {
+  background: linear-gradient(120deg, var(--g-green) 0%, var(--g-blue) 55%, var(--g-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.g-text-green {
+  background: linear-gradient(120deg, #00e87b 0%, #00ffa3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Cards ─── */
+.g-card {
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-card);
+  transition: border-color .25s, background .25s, transform .2s;
+  backdrop-filter: blur(10px);
+}
+.g-card:hover {
+  border-color: var(--g-border-h);
+  background: rgba(0,232,123,0.04);
+  transform: translateY(-2px);
+}
+
+/* ─── Hero overlays ─── */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(7,7,15,0.45) 0%,
+    rgba(7,7,15,0.20) 35%,
+    rgba(7,7,15,0.50) 75%,
+    rgba(7,7,15,1)    100%
+  );
+}
+
+/* ─── Grid dots bg ─── */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ─── Glow utils ─── */
+.glow-green { box-shadow: 0 0 40px rgba(0,232,123,.18), 0 0 80px rgba(0,232,123,.08); }
+.glow-card  { box-shadow: 0 0 0 1px rgba(0,232,123,.12), 0 8px 40px rgba(0,0,0,.5); }
+
+/* ─── Marquee ─── */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 28s linear infinite; display: flex; width: max-content; }
+
+/* ─── Floating bubbles ─── */
+@keyframes float-up {
+  0%   { opacity: 0; transform: translateY(20px) scale(.9); }
+  10%  { opacity: 1; transform: translateY(0)    scale(1);  }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-30px) scale(.95); }
+}
+.bubble { animation: float-up 4s ease-in-out forwards; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar            { width: 5px; }
+::-webkit-scrollbar-track      { background: var(--g-bg); }
+::-webkit-scrollbar-thumb      { background: rgba(255,255,255,.09); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(0,232,123,.35); }
+
+/* ─── Pulse dot ─── */
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(.8); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
