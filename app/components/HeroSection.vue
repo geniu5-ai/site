@@ -104,7 +104,7 @@ function spawnBubble() {
       <!-- CTAs -->
       <div ref="ctasRef" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full" style="opacity:0;">
         <a
-          href="#demo"
+          href="https://app.geniusapp.pro/register"
           class="group px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm transition-all hover:scale-[1.04] active:scale-95 glow-green flex items-center gap-2.5 display"
         >
           Começar grátis

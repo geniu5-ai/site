@@ -47,11 +47,11 @@ const links = [
 
       <!-- Actions -->
       <div class="flex items-center gap-3">
-        <a href="#" class="hidden md:block text-sm text-slate-500 hover:text-white transition-colors">
+        <a href="https://app.geniusapp.pro/login" class="hidden md:block text-sm text-slate-500 hover:text-white transition-colors">
           Entrar
         </a>
         <a
-          href="#demo"
+          href="https://app.geniusapp.pro/register"
           class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm transition-all hover:scale-[1.03] active:scale-95 display"
         >
           Começar grátis
